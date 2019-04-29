@@ -39,6 +39,13 @@ recsep = '=>'
 #     from initdata  import db
 #     storeDbase(db)
 
-dbfile = open('people-pickle','wb')
-pickle.dump(db,dbfile)
-dbfile.close
+# dbfile = open('people-pickle','wb')
+# pickle.dump(db,dbfile)
+# dbfile.close
+
+from initdata import bob ,sue
+import shelve
+db  = shelve.open('people-shelve')
+db['bob'] = bob
+db['sue'] = sue
+db.close()
